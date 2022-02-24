@@ -10,6 +10,7 @@ import UIKit
 class ImageCell: UICollectionViewCell {
     
     @IBOutlet weak var commonView: UIView!
+    @IBOutlet weak var myImage: UIImageView!
     
     static let reuseId: String = "imageCell"
     
@@ -33,5 +34,9 @@ class ImageCell: UICollectionViewCell {
             commonView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         commonView.backgroundColor = .black
+    }
+    
+    func setGallery(pictureName: String) {
+        myImage.image = UIImage(named: pictureName)
     }
 }

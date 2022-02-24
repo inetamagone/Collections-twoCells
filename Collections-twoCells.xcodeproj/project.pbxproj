@@ -17,6 +17,7 @@
 		FCBDF87827C765B3005EFC17 /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBDF87727C765B3005EFC17 /* CustomCollectionCell.xib */; };
 		FCBDF87A27C76C40005EFC17 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCBDF87927C76C40005EFC17 /* ImageCell.xib */; };
 		FCBDF87C27C76C7B005EFC17 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDF87B27C76C7B005EFC17 /* ImageCell.swift */; };
+		FCBDF87E27C779FF005EFC17 /* PictureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBDF87D27C779FF005EFC17 /* PictureData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FCBDF87727C765B3005EFC17 /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
 		FCBDF87927C76C40005EFC17 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		FCBDF87B27C76C7B005EFC17 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		FCBDF87D27C779FF005EFC17 /* PictureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				FCBDF85D27C7620A005EFC17 /* AppDelegate.swift */,
 				FCBDF85F27C7620A005EFC17 /* SceneDelegate.swift */,
+				FCBDF87F27C77A03005EFC17 /* Model */,
 				FCBDF87627C764E1005EFC17 /* Views */,
 				FCBDF87127C7625E005EFC17 /* Controller */,
 				FCBDF86327C7620A005EFC17 /* Main.storyboard */,
@@ -93,6 +96,14 @@
 				FCBDF87B27C76C7B005EFC17 /* ImageCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FCBDF87F27C77A03005EFC17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCBDF87D27C779FF005EFC17 /* PictureData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				FCBDF86227C7620A005EFC17 /* ViewController.swift in Sources */,
 				FCBDF85E27C7620A005EFC17 /* AppDelegate.swift in Sources */,
 				FCBDF86027C7620A005EFC17 /* SceneDelegate.swift in Sources */,
+				FCBDF87E27C779FF005EFC17 /* PictureData.swift in Sources */,
 				FCBDF87C27C76C7B005EFC17 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

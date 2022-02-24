@@ -8,7 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let pictureList: [PictureData] = [
+        PictureData(imageGallery: ["forest", "green", "sun", "yellow", "tree", "red"]),
+        PictureData(imageGallery: ["red", "tree", "yellow", "sun", "green" , "red"]),
+        PictureData(imageGallery: ["yellow", "sun", "green", "forest", "red", "tree"])
+    ]
+    
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -22,11 +28,12 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return pictureList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionCell.reuseId, for: indexPath) as? CustomCollectionCell else {return .init()}
+        cell.configure(pictureList: pictureList)
         return cell
     }
 }

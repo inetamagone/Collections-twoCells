@@ -14,6 +14,8 @@ class CustomCollectionCell: UICollectionViewCell {
     @IBOutlet weak var commonView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var pictureList: [PictureData] = []
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
@@ -41,16 +43,23 @@ class CustomCollectionCell: UICollectionViewCell {
         collectionView.backgroundColor = .systemPink
         backgroundColor = .red
     }
+    
+    func configure (pictureList: [PictureData]) {
+        self.pictureList = pictureList
+    }
 }
 
 extension CustomCollectionCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return pictureList[section].imageGallery.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseId, for: indexPath) as? ImageCell else {return .init()}
+        let picturePath = pictureList[indexPath.item].imageGallery[indexPath.row]
+        print(picturePath)
+        cell.setGallery(pictureName: picturePath)
         return cell
     }
 }
