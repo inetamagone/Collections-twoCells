@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCollectionCell" customModule="Collections_twoCells" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="xBL-hN-NHH" id="DYz-4y-4ah"/>
+                <outlet property="commonView" destination="3CQ-6j-yF7" id="fdx-7D-5PJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customCell" id="7mL-cB-rPM" customClass="CustomCollectionCell" customModule="Collections_twoCells" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3CQ-6j-yF7">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xBL-hN-NHH">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bVb-XN-N1E">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xBL-hN-NHH" firstAttribute="top" secondItem="3CQ-6j-yF7" secondAttribute="top" id="08n-Xg-FtI"/>
+                    <constraint firstAttribute="bottom" secondItem="xBL-hN-NHH" secondAttribute="bottom" id="OWx-0B-mCI"/>
+                    <constraint firstItem="xBL-hN-NHH" firstAttribute="leading" secondItem="3CQ-6j-yF7" secondAttribute="leading" id="ayQ-q1-zF0"/>
+                    <constraint firstAttribute="trailing" secondItem="xBL-hN-NHH" secondAttribute="trailing" id="xCU-sD-H0H"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="collectionView" destination="xBL-hN-NHH" id="Bsi-8O-Ur8"/>
+                <outlet property="commonView" destination="3CQ-6j-yF7" id="fXk-Tr-HOV"/>
+            </connections>
+            <point key="canvasLocation" x="-1115" y="89"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
