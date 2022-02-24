@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     let pictureList: [PictureData] = [
         PictureData(imageGallery: ["forest", "green", "sun", "yellow", "tree", "red"]),
-        PictureData(imageGallery: ["red", "tree", "yellow", "sun", "green" , "red"]),
+        PictureData(imageGallery: ["red", "tree", "yellow", "sun", "green"]),
         PictureData(imageGallery: ["yellow", "sun", "green", "forest", "red", "tree"])
     ]
     
@@ -29,6 +29,7 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictureList.count
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

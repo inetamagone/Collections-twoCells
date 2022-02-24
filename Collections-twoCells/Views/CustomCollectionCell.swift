@@ -52,14 +52,14 @@ class CustomCollectionCell: UICollectionViewCell {
 extension CustomCollectionCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return pictureList[section].imageGallery.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseId, for: indexPath) as? ImageCell else {return .init()}
-        let picturePath = pictureList[indexPath.item].imageGallery[indexPath.row]
-        print(picturePath)
-        cell.setGallery(pictureName: picturePath)
+        let pictureName = pictureList[0].imageGallery[indexPath.row]
+        cell.setGallery(pictureName: pictureName)
         return cell
     }
 }
