@@ -14,8 +14,6 @@ class ImageCell: UICollectionViewCell {
     
     static let reuseId: String = "imageCell"
     
-    var pictureList: [PictureData] = []
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
