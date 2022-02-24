@@ -16,6 +16,8 @@ class CustomCollectionCell: UICollectionViewCell {
     
     var pictureList: [PictureData] = []
     
+    var pictureArray = [String]()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initView()
@@ -47,8 +49,6 @@ class CustomCollectionCell: UICollectionViewCell {
     func configure (pictureList: [PictureData]) {
         self.pictureList = pictureList
     }
-    
-    
 }
 
 extension CustomCollectionCell: UICollectionViewDataSource {
@@ -60,8 +60,21 @@ extension CustomCollectionCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseId, for: indexPath) as? ImageCell else {return .init()}
-        let pictureName = pictureList[0].imageGallery[indexPath.row]
-        cell.setGallery(pictureName: pictureName)
+       
+        cell.configureArray(pictureArray: pictureArray)
+        cell.setGallery()
         return cell
+    }
+    
+    func getImagesToArray(indexPath: Int) {
+        for picture in pictureList[0].imageGallery {
+            self.pictureArray.append(picture)
+        }
+        for picture in pictureList[1].imageGallery {
+            self.pictureArray.append(picture)
+        }
+        for picture in pictureList[2].imageGallery {
+            self.pictureArray.append(picture)
+        }
     }
 }

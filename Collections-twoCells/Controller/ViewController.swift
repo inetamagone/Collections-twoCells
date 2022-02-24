@@ -34,6 +34,8 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionCell.reuseId, for: indexPath) as? CustomCollectionCell else {return .init()}
         cell.configure(pictureList: pictureList)
+        let indexPath = indexPath.row
+        cell.getImagesToArray(indexPath: indexPath)
         return cell
     }
 }
