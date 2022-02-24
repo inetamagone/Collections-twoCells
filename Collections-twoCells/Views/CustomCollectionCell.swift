@@ -47,17 +47,20 @@ class CustomCollectionCell: UICollectionViewCell {
     func configure (pictureList: [PictureData]) {
         self.pictureList = pictureList
     }
+    
+    
 }
 
 extension CustomCollectionCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pictureList[section].imageGallery.count
+        print(pictureList[tag].imageGallery.count)
+        return pictureList[tag].imageGallery.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseId, for: indexPath) as? ImageCell else {return .init()}
-        let pictureName = pictureList[indexPath.row].imageGallery[indexPath.row]
+        let pictureName = pictureList[0].imageGallery[indexPath.row]
         cell.setGallery(pictureName: pictureName)
         return cell
     }
