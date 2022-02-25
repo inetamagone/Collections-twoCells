@@ -12,8 +12,6 @@ class ImageCell: UICollectionViewCell {
     @IBOutlet weak var commonView: UIView!
     @IBOutlet weak var myImage: UIImageView!
     
-    var pictureArray = [String]()
-    
     static let reuseId: String = "imageCell"
     
     override init(frame: CGRect) {
@@ -38,14 +36,7 @@ class ImageCell: UICollectionViewCell {
         commonView.backgroundColor = .black
     }
     
-    func configureArray(pictureArray: [String]) {
-        self.pictureArray = pictureArray
-    }
-    
-    func setGallery() {
-        for picture in self.pictureArray {
-            print(picture)
-            myImage.image = UIImage(named: picture)
+        func setGallery(pictureName: String) {
+            myImage.image = UIImage(named: pictureName)
         }
-    }
 }

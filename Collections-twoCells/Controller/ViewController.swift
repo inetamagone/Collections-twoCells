@@ -15,6 +15,8 @@ class ViewController: UIViewController {
         PictureData(imageGallery: ["yellow", "sun", "green", "forest", "red", "tree"])
     ]
     
+    let arrayOfPictures = [[String]]()
+    
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -23,6 +25,8 @@ class ViewController: UIViewController {
         mainCollectionView.register(CustomCollectionCell.self, forCellWithReuseIdentifier: CustomCollectionCell.reuseId)
         mainCollectionView.backgroundColor = .lightGray
     }
+    
+   
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -33,9 +37,10 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionCell.reuseId, for: indexPath) as? CustomCollectionCell else {return .init()}
-        cell.configure(pictureList: pictureList)
-        let indexPath = indexPath.row
-        cell.getImagesToArray(indexPath: indexPath)
+        cell.configure(pictureData: pictureList[indexPath.row])
+        
+        let imagePath = pictureList[indexPath.section].imageGallery
+        print(imagePath)
         return cell
     }
 }

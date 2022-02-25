@@ -14,7 +14,7 @@ class CustomCollectionCell: UICollectionViewCell {
     @IBOutlet weak var commonView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var pictureList: [PictureData] = []
+    var pictureData: PictureData?
     
     var pictureArray = [String]()
     
@@ -46,35 +46,23 @@ class CustomCollectionCell: UICollectionViewCell {
         backgroundColor = .red
     }
     
-    func configure (pictureList: [PictureData]) {
-        self.pictureList = pictureList
+    func configure (pictureData: PictureData) {
+        self.pictureData = pictureData
     }
 }
 
 extension CustomCollectionCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(pictureList[tag].imageGallery.count)
-        return pictureList[tag].imageGallery.count
+        return pictureData?.imageGallery.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseId, for: indexPath) as? ImageCell else {return .init()}
-       
-        cell.configureArray(pictureArray: pictureArray)
-        cell.setGallery()
+        
+        let pictureName = pictureData?.imageGallery[indexPath.row] ?? ""
+        cell.setGallery(pictureName: pictureName)
         return cell
     }
-    
-    func getImagesToArray(indexPath: Int) {
-        for picture in pictureList[0].imageGallery {
-            self.pictureArray.append(picture)
-        }
-        for picture in pictureList[1].imageGallery {
-            self.pictureArray.append(picture)
-        }
-        for picture in pictureList[2].imageGallery {
-            self.pictureArray.append(picture)
-        }
-    }
+
 }
